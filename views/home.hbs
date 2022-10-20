@@ -1,0 +1,24 @@
+<ul >
+  {{#events}}
+    <li>
+        <h2>{{ title }}</h2>
+        <p>{{ description }}</p>
+        <p>Location: {{ location }}</p>
+        <p>Likes: {{ likes }}
+            <div class="buttons"> 
+            <form method="POST" action="/event/like">
+        <input type="hidden" value="{{id}}" name="id">
+        <input type="submit" value="Like"  style = "background-color:#4CAF50">
+         <input type="submit" value="UN-Like"  style = "background-color:coral">
+        </form>
+        <form method="POST" action="/event/unlike">
+        <input type="hidden" value="{{id}}" name="id">
+       
+        </form>
+
+            </div>
+       
+        </p>
+    </li>
+  {{/events}}
+</ul>
